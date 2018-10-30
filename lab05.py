@@ -3,35 +3,29 @@
 import networkx as nx
 
 if __name__ == "__main__":
-    str = input("")
-    n, m = str.split(" ")
+    str = input()
 
-    n = int(n)
-    m = int(m)
+    while str != "0 0":
+        n, m = str.split(" ")
+        n = int(n)
+        m = int(m)
 
-    while(not(m==0 and n==0)):
-      
-      G = nx.Graph()
-      
-      for i in range(0, m):
-        str = input("")
-        u, v, w = str.split(" ")
-        G.add_edge(int(u), int(v), weight=int(w))
+        G = nx.Graph()
 
-      T=nx.minimum_spanning_tree(G)
+        for i in range(0, m):
+            str = input("")
+            u, v, w = str.split(" ")
+            G.add_edge(int(u), int(v), weight=int(w))
 
-      soma = 0
-      for i in range(0,n):
-        for j in range(0,n):
-          if((not T.has_edge(i,j)) and G.has_edge(i,j) and i>j):
-            soma += G[i][j]['weight']
+        T = nx.minimum_spanning_tree(G)                               # Ruas que ficarão com iluminação
 
-      print(soma)
+        # Calculo da economia feita
+        soma = 0
+        for i in range(0,n):
+            for j in range(0,n):
+                if((not T.has_edge(i,j)) and G.has_edge(i,j) and i>j):
+                    soma += G[i][j]['weight']
 
-      str = input("")
-      n, m = str.split(" ")
-      
-      n = int(n)
-      m = int(m)
+        print(soma)
 
-
+        str = input()
