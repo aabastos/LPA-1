@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
       B = nx.Graph()
 
-      camisas = ["XXL","XL","L","M","S","XS"]
+      camisas = ["XXL","XL","L","M","S","XS"]       # Lista do tamanho 
 
 
       for i in camisas:
