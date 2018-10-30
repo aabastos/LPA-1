@@ -28,7 +28,7 @@ if __name__ == "__main__":
         ler = input("")
         a, b = ler.split(" ")
 
-        for j in (0, numCamisas/6):
+        for j in range (0, int(numCamisas/6)):
           B.add_edge(a+str(j),i)                    # Liga o voluntário à todas as camisas do tamanho 'a'
           B.add_edge(b+str(j),i)                    # Liga o voluntário à todas as camisas do tamanho 'b'
 
